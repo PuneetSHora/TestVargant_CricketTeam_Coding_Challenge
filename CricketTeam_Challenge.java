@@ -2,13 +2,13 @@ import java.util.*;
 
 public class CricketTeam_Challenge {
     String name;
-    int pts;
+    int points;
     String[] results_of_team;
     String result_type;
     int consecutive;
-    CricketTeam_Challenge(String name, int pts, String[] results_of_team, String result_type, int consecutive){
+    CricketTeam_Challenge(String name, int points, String[] results_of_team, String result_type, int consecutive){
         this.name = name;
-        this.pts = pts;
+        this.points = points;
         this.results_of_team = results_of_team;
         this.result_type = result_type;
         this.consecutive = consecutive;
@@ -24,15 +24,9 @@ public class CricketTeam_Challenge {
             }
         }
         int count_consecutive=0;
-        //System.out.println(name);
-        //System.out.println(result);
-        //System.out.println(pts);
         for(int i=0;i<results_of_team.length;i++) {
             if (results_of_team[i].equals(result_type)) {
                 count_consecutive = count_consecutive + 1;
-                //System.out.print(i+" ");
-                //System.out.print(result+" ");
-                //System.out.print(ct+" ");
                 if(count_consecutive==consecutive)
                 {
                     break;
@@ -140,15 +134,13 @@ public class CricketTeam_Challenge {
                     {
                         System.out.println(teams[i].name);
                     }
-                    total = total + teams[i].pts;
+                    total = total + teams[i].points;
                     j++;
                 }
                 if (j == Filtered_Teams.size()) {
                     i = teams.length;
                 }
             }
-            //System.out.println(Teams.size());
-            //System.out.println(total);
             float len = Filtered_Teams.size();
             float t = total;
             float avg = t / len;
